@@ -1,0 +1,12 @@
+Dependencies:
+
+numpy
+opencv-python
+pyautogui
+pillow
+   
+   python3 -m pip install numpy
+   python3 -m pip install opencv-python
+   python3 -m pip install pyautogui
+   python3 -m pip install pillow
+  

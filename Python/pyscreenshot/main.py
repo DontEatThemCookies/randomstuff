@@ -66,12 +66,6 @@ print("Image will be named randomly and saved to the folder containing this scri
 print("")
 input("Press ENTER once ready to take the screenshot. Otherwise, CTRL + C to exit.")
 
-
-# This line closes window instances of this script prematurely in Windows.
-# It has no functional use for MacOS/Linux.
-#ctypes.windll.user32.ShowWindow( ctypes.windll.kernel32.GetConsoleWindow(), 0 )
-
-
 filename = str(uuid.uuid4()) # Define filename as a random UUID
 string2 = ".png" # Define the image format to be saved - changeable to JPG/JPEG
 name = filename+string2 # Concantenate the two strings to be used by CV2.

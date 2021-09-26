@@ -1,11 +1,6 @@
 #!/usr/bin/env python3
 # Above line is for Linux clients
 
-###############################################
-# MODIFY ONLY IF YOU KNOW WHAT YOU ARE DOING! #
-###############################################
-
-
 
 # Python program to take screenshots - v1.1 9-24-2021
 # Dependencies: numpy, opencv-python, pyautogui, pillow (not PIL)

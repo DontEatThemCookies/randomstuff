@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
 # Above line is for Linux clients
 
-# Python program to take screenshots - v1 9-23-2021
+###############################################
+# MODIFY ONLY IF YOU KNOW WHAT YOU ARE DOING! #
+###############################################
+
+
+
+# Python program to take screenshots - v1.1 9-24-2021
 # Dependencies: numpy, opencv-python, pyautogui, pillow (not PIL)
 # python3 -m pip install [dependency]
 # Substitute "python3" to "py" or "python.exe" if it fails to execute.
@@ -45,11 +51,6 @@ title()
 
 # Initialization
 
-A = 1
-
-if A > 1:
-    print("Screenshot taken!")
-
 print(init+scriptname)
 print("")
 print("Python Screenshot - Fullscreen screenshots")
@@ -59,6 +60,13 @@ print("This program will return to this screen automatically after each screensh
 print("Image will be named randomly and saved to the folder containing this script.")
 print("")
 input("Press ENTER once ready to take the screenshot. Otherwise, CTRL + C to exit.")
+
+
+# This line closes the script's window prematurely,
+# so that the screenshot can be taken without being blocked by the
+# console window.
+ctypes.windll.user32.ShowWindow( ctypes.windll.kernel32.GetConsoleWindow(), 0 )
+
 
 filename = str(uuid.uuid4()) # Define filename as a random UUID
 string2 = ".png" # Define the image format to be saved - changeable to JPG/JPEG
@@ -73,11 +81,5 @@ image = cv2.cvtColor(np.array(image),
    
 # Saves the image.
 cv2.imwrite(name, image)
-
-print("")
-with open('main.py') as infile:
-    exec(infile.read())
-# exec(open('main.py').read())
-# old method of opening file
 
 # EOF

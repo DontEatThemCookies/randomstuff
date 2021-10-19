@@ -1,0 +1,31 @@
+Feta is a joke programming language created by Nicholas Smith as a glitch to the BBC question about false programming languages on 30 May, 2013. It contains only one instruction: "WRITE", that prints "H3110 W0R1D" in an external text file named "0WTPWT.txt". It was designed to be an April Fools Joke on the GlobalGameDevelopersForum site.
+
+Syntax is very simple: The one and only instruction is "WRITE".
+
+https://esolangs.org/wiki/Feta
+
+--------------------------------------------------------------------------------------------
+
+Feta in Python 3 - Official Documentation
+10/18/2021
+
+Details
+
+Specification: Feta programming language
+Classification: Joke/Esoteric
+Filename: feta.py
+Lines: 5
+Size: 134 bytes
+Implementation Language: CPython
+Feta specification compliance: 100%
+
+Usage
+
+Upon startup of feta.py, you will be prompted for input.
+The only valid instruction is "WRITE" - any other input will be ignored. Note that the "WRITE" instruction is case-sensitive.
+
+Once the "WRITE" command is issued, it creates a file named "0WTPWT.txt" and writes the following text to it:
+
+H3110 W0R1D
+
+This CPython implementation has no function to exit, as it has not been provisioned for in the original specification. You may, however, still use Ctrl+C or close the terminal.

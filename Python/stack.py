@@ -3,7 +3,7 @@
 # Basic Stack - v3, 10/28/2021
 
 # Order: Last in, first out
-# ASCII command display stack values in the opposite order
+# ASCII command displays stack values in the opposite order
 
 """
 PUSH - Pushes a new item to the top of the stack

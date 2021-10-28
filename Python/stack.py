@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
-# abasicstack - v2, 10/28/2021
+# Basic Stack - v3, 10/28/2021
 
 # Order: Last in, first out
-# (ASCII commands display the stack in the opposite order)
+# ASCII command display stack values in the opposite order
 
 """
 PUSH - Pushes a new item to the top of the stack
@@ -12,14 +12,15 @@ PUSHV [number] - Pushes a specific value to the top of the stack
 POP - Removes the top item of the stack
 STACK - Shows the current state of the stack
 
-PEEK - Returns the stack pointer location (should always be the top item)
+PEEK - Returns the top value of the stack
 DUPL - Duplicates the top item and puts it to the top of the stack
 SWAP - Swaps the positions of the top two items on the stack
 OVER - Duplicates the item 2nd from the top and puts it to the top of the stack
+WIPE - Empties the stack of any values (irreversible)
 
 ASCII - Converts stack values to corresponding ASCII characters
-    65-90 (40-5A) uppercase letters
-    97-122 (61-7A) lowercase letters
+    65-90 (40-5A) - [A-Z] uppercase letters
+    97-122 (61-7A) - [a-z] lowercase letters
 CONV [string] - Converts string's characters to corresponding ASCII chars
 CONVP [string] - Same as CONV, but pushes the values to the stack.
 
@@ -38,6 +39,9 @@ def split(text: str) -> (str, str):
         return text[:space], text[space + 1:]
     return text, ""
 
+print("Basic Stack v3")
+print("")
+
 while True:
     command = input()
     command, args = split(command)
@@ -49,11 +53,14 @@ while True:
             stack.append(1)
         print("Pushed to stack successfully.")
     if command.upper() == "PUSHV":
-        try:
-            stack.append(args)
-            print("Pushed specified val to stack successfully.")
-        except ValueError:
-            print("Invalid specified value.")
+        if args != "":  
+            try:
+                stack.append(args)
+                print("Pushed specified val to stack successfully.")
+            except ValueError:
+                print("Invalid specified value.")
+        else:
+            print("No value specified.")
             
     if command.upper() == "POP":
         if stack != []:
@@ -95,8 +102,14 @@ while True:
     if command.upper() == "ASCII":
         if stack != []:
             try:
+                asclist = []
                 for i in stack:
-                    print(i, chr(int(i)))
+                    asc = chr(int(i))
+                    print(i, asc)
+                    asclist.append(asc)
+                ascstr = ""
+                ascstr = ascstr.join(asclist)
+                print("String:", ascstr)
             except OverflowError:
                 print("One of the stack's values are too large.")
             except ValueError:
@@ -119,7 +132,9 @@ while True:
         print("Converted string to ASCII and pushed to stack:")
         print(values)
 
-        
+    if command.upper() == "WIPE":
+        stack = []
+        print("Stack wiped.")
     if command.upper() == "STACK":
         if stack != []:
             stack.reverse()

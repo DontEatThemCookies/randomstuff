@@ -1,0 +1,140 @@
+Basic Stack
+2021
+David Costell | davidcostell44@gmail.com
+
+Basic Stack is an esoteric programming language, largely inspired but not affiliated to the "Super Stack!" language. Much like its inspiration, Basic Stack revolves around one central stack, where different operations can be done to it. It shares many functions with "Super Stack!", but it is not Turing-complete unlike its inspiration. Think of Basic Stack as a stripped-down version of it.
+
+Details
+
+Esolang: Basic Stack
+Paradigms: Imperative, stack-based, esoteric
+Superset/Subset/Variant of: Super Stack! 
+Filename: stack.py
+Lines: BS1 - TBA
+Size: BS1 - TBA
+Implementation Language: Python 3
+Implementation Type: User Input Shell (Coming Soon: File interpreter)
+Specification Compliance: 100% (Reference Implementation)
+
+--------------------------------------------------------------------------------------------
+
+Basic Stack - Official Documentation
+Version BS1
+10/29/2021
+
+INTRODUCTION
+
+Basic Stack is a stack-based esoteric programming language by David Costell, conceived in late October 2021. It bears high similarity to another esolang called "Super Stack!", which is also stack-based. At its core, Basic Stack is a subset/variant of Super Stack, and although the two are similar, there are also some differences between them, including:
+
+-Lack of a looping function (currently Work-In-Progress and will be released in BS2)
+-Having to explicitly type "PUSHV [value]" instead of directly typing a value to be pushed
+-No logic gate operations (and, or, xor, etc.)
+-Reference implementation takes individual commands from user input (There will be a file interpreter soon. It will enable BS scripts to be written)
+-EXIT is used instead of QUIT
+-STACK is used instead of DEBUG
+-TOP and BOT are used instead of CYCLE and RCYCLE respectively
+-Slightly different way of handling ASCII
+    "ASCII" to convert the whole stack's values into its corresponding ASCII character
+    "CONVP" to convert a specified string's characters into its ASCII values and pushes it
+    to the stack. 
+
+Nevertheless, its core concept, stack-based operations, mostly remain the same.
+The current reference implementation available takes the form of a shell, interpreting input from the terminal instead of executing from a file. Any input that is not a valid instruction will be treated as a NOP.
+
+It is important to note the Last In, First Out order is used, however the ASCII commands output the stack in the opposite order.
+
+The full instruction list as of BS1 can be found in the next section.
+
+INSTRUCTIONS
+
+PUSH - Pushes a new item to the top of the stack
+PUSHV [number] - Pushes a specific value to the top of the stack
+    The number argument has to be a valid decimal integer.
+PUSHR [number] - Pushes a specific number of times to the top of the stack
+    The number argument has to be a valid decimal integer.
+    If the number argument defined is large (>8 numbers), it may take a long time
+POP - Removes the top item of the stack
+POPR [number] - Pops values from the stack a specific number of times
+    The number argument has to be a valid decimal integer.
+    If the argument exceeds the number of actual values in the stack,
+    it will be emptied.
+    
+STACK - Shows the stack (LI-FO order)
+
+PEEK - Returns the top value of the stack
+DUPL - Duplicates the top item and puts it to the top of the stack
+SWAP - Swaps the positions of the top two items on the stack
+OVER - Duplicates the item 2nd from the top and puts it to the top of the stack
+ROT - Rotates top three values of the stack clockwise
+ROTCC - Rotates top three values of the stack counterclockwise
+
+TOP - Top value of the stack is placed in the bottom
+BOT - Bottom value of the stack is placed in the top
+REV - Reverses entire stack
+
+TOP and BOT practically do the same thing.
+This was split into two commands to be parallel with "CYCLE" and "RCYCLE"
+
+WIPE - Empties the stack (irreversible)
+
+ADD - Pops top two values, adds them and pushes the result
+SUB - Pops top two values, subtracts them and pushes the result
+MUL - Pops top two values, multiplies them and pushes the result
+DIV - Pops top two values, divides them and pushes the result
+MOD - Pops top two values, does modulus on them and pushes the result
+
+ASCII - Converts stack values to corresponding ASCII characters
+    Similar to INPUTASCII
+    10 (0A) - Line Feed (newline)
+    65-90 (40-5A) - [A-Z] uppercase letters
+    97-122 (61-7A) - [a-z] lowercase letters
+CONV [string] - Converts string's characters to corresponding ASCII chars
+    Follow the order of ASCII numbers outputted here if you plan
+    to manually PUSHV the ASCII values into the stack.
+CONVP [string] - Same as CONV, but pushes the values to the stack
+    Similar to OUTPUTASCII
+
+EXIT - Exits the program
+
+PUSHV means Push value
+PUSHR means Push repeat
+POPR means Pop repeat
+CONVP means Convert push
+
+To Be Implemented:
+
+LOOP - Enters loop mode. The next command issued will be looped.
+    Similar to "IF" in Super Stack!
+END - Ends any loop.
+    Similar to "FI" in Super Stack!
+
+EXAMPLE PROGRAMS
+
+Hello World
+-------------------------
+# Simple
+convp "Hello, World!"
+ascii
+
+# Complex
+pushv 72
+pushv 101
+pushv 108
+dupl
+pushv 111
+pushv 44
+pushv 32
+pushv 87
+pushv 111
+pushv 114
+pushv 108
+pushv 100
+pushv 33
+ascii
+
+-------------------------
+
+KNOWN FUNCTIONALITY ISSUES
+
+Negative numbers can be pushed into the stack through the ADD/SUB/MUL/DIV operations.
+This will affect ASCII conversion. It is not recommended to have negative numbers in your stack. Their use will be restricted in BS2.

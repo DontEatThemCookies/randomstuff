@@ -113,7 +113,7 @@ EXAMPLE PROGRAMS
 Hello World
 -------------------------
 # Simple
-convp "Hello, World!"
+convp Hello, World!
 ascii
 
 # Complex

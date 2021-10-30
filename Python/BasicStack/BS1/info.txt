@@ -146,4 +146,13 @@ The BS1 reference implementation comes in two flavors: a shell and an interprete
 The shell takes user input and processes instructions once at a time.
 The interpreter takes input from a user-specified file and processes instructions procedurally according to the file.
 
-The shell implementation gives end-users an easy way to jump right in to using Basic Stack, while the interpreter provides the ability to write scripts for it. In BS1 scripts, anything except valid instructions are ignored, just like how the shell ignores any user input that isn't a valid instruction.
+The shell implementation gives end-users an easy way to jump right in to using Basic Stack, while the interpreter provides the ability to write scripts for it. In BS1 scripts, anything except valid instructions are ignored, just like how the shell ignores any user input that isn't a valid instruction. For more details on Basic Stack scripts, refer to the next section:
+
+SCRIPT GUIDELINES
+
+To be properly interpreted, these guidelines must be implemented in your script file:
+
+-All instructions must be lowercase
+-One instruction per line
+
+Do note that these guidelines may change over time.

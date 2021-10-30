@@ -97,11 +97,11 @@ def showstack(x):
     x.reverse()
     print("-")
 
-def asc(x, y):
+def asc(x):
     asclist = []
     for i in stack:
         asc = chr(int(i))
-        if y != 0: 
+        if x != 0:
             print(i, asc)
         asclist.append(asc)
     ascstr = ""

@@ -108,7 +108,7 @@ def asc(x, y):
     ascstr = ascstr.join(asclist)
     print("String:", ascstr)
 
-print("Basic Stack v4",
+print("Basic Stack",
       "Input commands",
       "",
       sep="\n")

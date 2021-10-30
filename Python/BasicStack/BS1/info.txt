@@ -9,11 +9,11 @@ Details
 Esolang: Basic Stack
 Paradigms: Imperative, stack-based, esoteric
 Superset/Subset/Variant of: Super Stack! 
-Filename: stack.py
-Lines: BS1 - 338
-Size: BS1 - 10,907 bytes
+Filename: stack.py, stackf.py (Shell and Interpreter respectively)
+Lines: BS1 Shell - 338 | BS1 Interpreter - TBA
+Size: BS1 Shell - 10,904 bytes | BS1 Interpreter - TBA
 Implementation Language: Python 3
-Implementation Type: User Input Shell (Coming Soon: File interpreter)
+Implementation Type: User Input Shell, File Interpreter
 Specification Compliance: 100% (Reference Implementation)
 
 --------------------------------------------------------------------------------------------
@@ -138,3 +138,12 @@ KNOWN FUNCTIONALITY ISSUES
 
 Negative numbers can be pushed into the stack through the ADD/SUB/MUL/DIV operations.
 This will affect ASCII conversion. It is not recommended to have negative numbers in your stack. Their use will be restricted in BS2.
+
+SHELL AND INTERPRETER
+
+The BS1 reference implementation comes in two flavors: a shell and an interpreter.
+
+The shell takes user input and processes instructions once at a time.
+The interpreter takes input from a user-specified file and processes instructions procedurally according to the file.
+
+The shell implementation gives end-users an easy way to jump right in to using Basic Stack, while the interpreter provides the ability to write scripts for it. In BS1 scripts, anything except valid instructions are ignored, just like how the shell ignores any user input that isn't a valid instruction.

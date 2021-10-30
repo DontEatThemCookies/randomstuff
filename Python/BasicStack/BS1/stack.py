@@ -97,17 +97,6 @@ def showstack(x):
     x.reverse()
     print("-")
 
-def asc(x):
-    asclist = []
-    for i in stack:
-        asc = chr(int(i))
-        if x != 0:
-            print(i, asc)
-        asclist.append(asc)
-    ascstr = ""
-    ascstr = ascstr.join(asclist)
-    print("String:", ascstr)
-
 print("Basic Stack",
       "Input commands",
       "",

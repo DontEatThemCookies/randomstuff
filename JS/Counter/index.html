@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<!-- 
+    Basic Counter App [02/19/2022] 
+    Requires: Modern browser (ES6)
+-->
+<html lang="en-us">
+    <head>
+        <title>Counter</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .button {
+                display: inline-block;
+                padding: 15px 25px;
+                font-size: 24px;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+                outline: none;
+                color: #fff;
+                background-color: #15ade9;
+                border: none;
+                border-radius: 15px;
+                box-shadow: 0 9px #999;
+            }.button:hover {
+                background-color: #1177a0;
+            }.button:active {
+                background-color: #1177a0;
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+
+            body {
+                background-color: cornflowerblue;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Counter</h1>
+        <p id="ctr" style="background-color: white; font-size: 90px;">0</p>
+
+        <button onclick="incr();" class="button">Increment</button>
+        <button onclick="decr();" class="button">Decrement</button>
+
+        <script>
+            const ctr = document.getElementById("ctr");
+            const incr = () => ctr.innerText = parseInt(ctr.innerText) + 1;
+            const decr = () => ctr.innerText = parseInt(ctr.innerText) - 1;
+        </script>
+    </body>
+</html>
